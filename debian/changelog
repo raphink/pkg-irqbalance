@@ -1,3 +1,9 @@
+irqbalance (1.1.0-2ubuntu1~precise0+exo1) precise; urgency=medium
+
+  * Backport to Precise.
+
+ -- Vincent Bernat <bernat@debian.org>  Tue, 06 Dec 2016 11:26:00 +0100
+
 irqbalance (1.1.0-2ubuntu1) xenial; urgency=medium
 
   * Do not start when inside a container (LP: #1454273) 
