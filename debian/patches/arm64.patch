@@ -1,0 +1,35 @@
+From: Edmund Grimley Evans <edmund.grimley.evans@gmail.com>
+Subject: irqbalance: FTBFS on arm64
+Date: Sat, 9 Jan 2016 09:08:11 +0000
+
+https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=810505
+
+It failed to build on arm64:
+
+https://buildd.debian.org/status/fetch.php?pkg=irqbalance&arch=arm64&ver=1.1.0-1&stamp=1452234557
+
+It built with the attached patch, which corrects two typos,
+apparently.
+
+Index: irqbalance-1.1.0/procinterrupts.c
+===================================================================
+--- irqbalance-1.1.0.orig/procinterrupts.c
++++ irqbalance-1.1.0/procinterrupts.c
+@@ -80,7 +80,7 @@ static int check_platform_device(char *n
+ 			rc = 0;
+ 			goto out;
+ 		} else if (!strncmp(ent->d_name, "net", strlen("net"))) {
+-			info->IRQ_TYPE_LEGACY;
++			info->type = IRQ_TYPE_LEGACY;
+ 			info->class = IRQ_ETH;
+ 			rc = 0;
+ 			goto out;
+@@ -94,7 +94,7 @@ static int check_platform_device(char *n
+ 
+ out:
+ 	closedir(dirfd);
+-	log(TO_ALL, LOG_DEBUG, "IRQ %s is of type %d and class %d\n", name, info->type, info->class)
++	log(TO_ALL, LOG_DEBUG, "IRQ %s is of type %d and class %d\n", name, info->type, info->class);
+ 	return rc;
+ 
+ }

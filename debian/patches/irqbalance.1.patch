@@ -1,0 +1,15 @@
+W: irqbalance: manpage-has-errors-from-man usr/share/man/man1/irqbalance.1.gz 89: warning: macro `tP' not defined
+
+Index: irqbalance-1.1.0/irqbalance.1
+===================================================================
+--- irqbalance-1.1.0.orig/irqbalance.1
++++ irqbalance-1.1.0/irqbalance.1
+@@ -105,7 +105,7 @@ and will be captured and interpreted by
+ exit code from the provided utility.  Recognized key=value pairs are:
+ .TP
+ .I ban=[true | false]
+-.tP
++.TP
+ Directs irqbalance to exclude the passed in IRQ from balancing.
+ .TP
+ .I balance_level=[none | package | cache | core]
