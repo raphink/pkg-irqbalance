@@ -1,6 +1,7 @@
 irqbalance (1.1.0-2ubuntu1~precise0+exo1) precise; urgency=medium
 
   * Backport to Precise.
+     + Relax build dependency on debhelper
 
  -- Vincent Bernat <bernat@debian.org>  Tue, 06 Dec 2016 11:26:00 +0100
 
